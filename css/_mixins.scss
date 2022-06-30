@@ -1,0 +1,67 @@
+@import "./base";
+
+$pad:50;
+$loc:before(content'');
+$padding:padding;
+$image-square:150px;
+
+@mixin center-align{
+    text-align: center;
+    margin: 0 auto;
+    padding: 0;
+    justify-items: center;
+}
+
+@mixin image-resize-vierkant{
+    width: $image-square;
+    height: $image-square;
+    object-fit: cover;
+
+}
+
+@mixin padd($padding:25px){
+    position: relative;
+    padding: $padding;
+}
+
+@mixin container{
+    width: 80%;
+    margin: 10px auto;
+    text-align: center;
+    background-color: $text-backgr;
+    // background-color: conic-gradient($text-backgr 0deg 90deg, $footer-backgr 90deg 270deg, $text-backgr 270deg 360deg);
+    padding: $pad;
+    border-radius: 35px;
+}
+@mixin image {
+    @include image-resize-vierkant();
+    border-radius: 50%;
+    margin: 15px 0;
+    @include padd($padding:0px);
+    border: 10px solid black;
+}
+@mixin mediascreen{
+    display: grid;
+    margin: 20px auto;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 25px;
+    $img-width:100px;
+    @include center-align;
+
+    @media  screen and  (min-width:$screen-width-tablet){
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+        margin: 20px auto;
+        $img-width:250px;
+        @include center-align;
+    }
+    @media  screen and  (min-width:$screen-width-desktop){
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+        margin: 20px auto;
+        $img-width:400px;
+        @include center-align;
+    }
+}

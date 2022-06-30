@@ -1,0 +1,22 @@
+// Color variales
+$page-backgr:#c3cfe2;
+$text-backgr:#fff;
+$footer-backgr:#686de0;
+$footer-text-clr:#fff;
+$content-text-clr:#000;
+
+// font property
+$cont-font-size:5vw;
+
+
+// site property
+$bef:content'';
+$aft:content'';
+$screen-width-tablet:768px;
+$screen-width-desktop:1024px;
+
+
+body{
+    background-color:$page-backgr;
+    font-size: $cont-font-size;
+}
