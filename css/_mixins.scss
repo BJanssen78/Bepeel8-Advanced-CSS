@@ -4,6 +4,7 @@ $pad:50;
 $loc:before(content'');
 $padding:padding;
 $image-square:150px;
+$social-img:30px;
 
 @mixin center-align{
     text-align: center;
@@ -64,4 +65,10 @@ $image-square:150px;
         $img-width:400px;
         @include center-align;
     }
+}
+@mixin social-links{
+    padding: 10px;
+    width: $social-img;
+    height: $social-img;
+    
 }

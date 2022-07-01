@@ -52,3 +52,60 @@
         }
     }
 }
+.social-links{
+    color: white;
+    font-size: 30px;
+    margin: 0px;
+    position: sticky;
+    bottom: 1px;
+    // right: 1px;
+    float: right;
+    z-index: 1;
+    overflow: hidden;
+
+    ul li{
+        list-style-type: none;
+        display: block;
+        position:relative;
+        padding-right: 20px;
+        width: $social-img;
+        transition: 200ms width ease-out;
+        &:hover{
+            // transform: translateX(40px);
+            width: 300px;
+            // height: $social-img;
+        }
+        a{
+            color: white;
+            text-decoration: none;
+            &:hover::after{
+                content: 'See me on LinkedIn';
+                // font-size: 0.5em;
+                width: 250px;
+                height: $social-img;
+                background-color: $social-linkedin;
+            }
+        }
+    }
+    .fa-linkedin-in{
+        background-color: $social-linkedin;
+        @include social-links;
+        
+    }
+    .fa-facebook-f{
+        background-color: $social-facebook;
+        @include social-links;
+    }
+    .fa-github{
+        background-color: $social-github;
+        @include social-links;
+    }
+    .fa-twitter{
+        background-color: $social-twitter;
+        @include social-links;
+    }
+    .fa-laptop-code{
+        background-color: $social-blog;
+        @include social-links;
+    }
+}
