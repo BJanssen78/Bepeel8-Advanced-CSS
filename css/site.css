@@ -1,171 +1,120 @@
 body {
   background-color: #c3cfe2;
   font-size: 5vw;
-}
-
-body {
-  background-color: #c3cfe2;
-  font-size: 5vw;
-}
-
-.content-ass-1 {
-  width: 80%;
-  margin: 10px auto;
   text-align: center;
-  background-color: #fff;
-  padding: 50;
-  border-radius: 35px;
-}
-
-.plaatje {
-  width: 150px;
-  height: 150px;
-  -o-object-fit: cover;
-     object-fit: cover;
-  border-radius: 50%;
-  margin: 15px 0;
-  position: relative;
-  padding: 0px;
-  border: 10px solid black;
-}
-
-.inner-container::after {
-  content: "";
-  background-color: #686de0;
-  width: 100%;
-  height: 40%;
   margin: 0;
   padding: 0;
 }
 
-.footer {
-  background-color: #686de0;
-  color: #fff;
-  width: 100%;
-  text-transform: uppercase;
-}
-.footer a {
-  color: #c3cfe2;
-  text-decoration: none;
-  text-transform: none;
+.testomonial {
+  display: none;
 }
 
 .portfolio {
   display: grid;
+  width: 80%;
   margin: 20px auto;
-  grid-template-columns: repeat(1, 1fr);
-  gap: 25px;
-  text-align: center;
-  margin: 0 auto;
-  padding: 0;
+  justify-content: center;
   justify-items: center;
-  text-align: center;
-  display: grid;
-  position: relative;
-  z-index: 1;
+  grid-template-columns: 1 auto-fit, minmax(300px, 1fr);
+  gap: 25px;
 }
 @media screen and (min-width: 768px) {
   .portfolio {
-    display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
-    margin: 20px auto;
-    text-align: center;
-    margin: 0 auto;
-    padding: 0;
-    justify-items: center;
   }
 }
 @media screen and (min-width: 1024px) {
   .portfolio {
-    display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-    margin: 20px auto;
-    text-align: center;
-    margin: 0 auto;
-    padding: 0;
-    justify-items: center;
   }
 }
-.portfolio .porto-img {
-  width: 80%;
+.portfolio .foto-btn {
+  position: relative;
 }
-.portfolio .porto-img:hover {
-  transition: 500ms ease-in-out;
+.portfolio .foto-btn .porto-img {
+  z-index: 2;
+}
+.portfolio .foto-btn .porto-img:hover {
+  background-color: rgba(0, 0, 0, 0.4);
   opacity: 0.1;
-  background-color: rgb(0, 0, 1);
-  mix-blend-mode: multiply;
-}
-.portfolio .porto-img::after:hover {
-  content: "Hello";
-  color: red;
-  width: 50px;
-  display: block;
-  background-color: rgba(0, 0, 0, 0.9);
   z-index: -1;
+}
+.portfolio .foto-btn .porto-img:hover > .img-btn {
+  z-index: 1;
+}
+.portfolio .foto-btn .img-btn {
   position: absolute;
+  top: 50%;
+  left: 50%;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+  width: 40%;
+  height: 15%;
+  font-size: 0.3em;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.4);
+  border: none;
+  z-index: -1;
+}
+.portfolio .foto-btn .img-btn:hover {
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .social-links {
-  color: white;
-  font-size: 30px;
-  margin: 0px;
+  display: flex;
+  justify-content: right;
   position: -webkit-sticky;
   position: sticky;
-  bottom: 1px;
-  float: right;
+  bottom: 180px;
+  font-size: 25px;
   z-index: 1;
+}
+.social-links .social-list {
+  list-style-type: none;
+  width: 50px;
+  height: 50px;
+  position: relative;
+}
+.social-links .social-list .social-items {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: width 500ms ease-out;
   overflow: hidden;
 }
-.social-links ul li {
-  list-style-type: none;
-  display: block;
-  position: relative;
-  padding-right: 20px;
-  width: 30px;
-  transition: 200ms width ease-out;
-}
-.social-links ul li:hover {
-  width: 300px;
-}
-.social-links ul li a {
-  color: white;
+.social-links .social-list .social-items a {
   text-decoration: none;
 }
-.social-links ul li a:hover::after {
-  content: "See me on LinkedIn";
-  width: 250px;
-  height: 30px;
+.social-links .social-list .social-items a:hover::after {
+  content: "Follow me";
+  color: white;
+}
+.social-links .social-list .social-items:hover {
+  width: 100px;
+  right: 200px;
+}
+.social-links .social-list {
+  padding: 0;
+}
+.social-links .linkedin {
   background-color: #007bb6;
 }
-.social-links .fa-linkedin-in {
-  background-color: #007bb6;
-  padding: 10px;
-  width: 30px;
-  height: 30px;
-}
-.social-links .fa-facebook-f {
+.social-links .facebook {
   background-color: #3b5998;
-  padding: 10px;
-  width: 30px;
-  height: 30px;
 }
-.social-links .fa-github {
+.social-links .github {
   background-color: #333;
-  padding: 10px;
-  width: 30px;
-  height: 30px;
 }
-.social-links .fa-twitter {
+.social-links .twitter {
   background-color: #00aced;
-  padding: 10px;
-  width: 30px;
-  height: 30px;
 }
-.social-links .fa-laptop-code {
+.social-links .blog {
   background-color: #e17b77;
-  padding: 10px;
-  width: 30px;
-  height: 30px;
+}
+.social-links .social-link {
+  color: white;
 }/*# sourceMappingURL=site.css.map */

@@ -17,13 +17,19 @@ $cont-font-size:5vw;
 
 
 // site property
-$bef:content'';
-$aft:content'';
 $screen-width-tablet:768px;
 $screen-width-desktop:1024px;
+$social-square:50px;
+$image-square:(width:150px);
 
 
 body{
     background-color:$page-backgr;
     font-size: $cont-font-size;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+.testomonial{
+    display: none;
 }

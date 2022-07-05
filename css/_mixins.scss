@@ -1,74 +1,53 @@
-@import "./base";
 
-$pad:50;
-$loc:before(content'');
-$padding:padding;
-$image-square:150px;
-$social-img:30px;
+@mixin portfolio-image{
+    grid-template-columns: 1(auto-fit, minmax(300px, 1fr));
 
-@mixin center-align{
-    text-align: center;
-    margin: 0 auto;
-    padding: 0;
-    justify-items: center;
-}
-
-@mixin image-resize-vierkant{
-    width: $image-square;
-    height: $image-square;
-    object-fit: cover;
-
-}
-
-@mixin padd($padding:25px){
-    position: relative;
-    padding: $padding;
-}
-
-@mixin container{
-    width: 80%;
-    margin: 10px auto;
-    text-align: center;
-    background-color: $text-backgr;
-    // background-color: conic-gradient($text-backgr 0deg 90deg, $footer-backgr 90deg 270deg, $text-backgr 270deg 360deg);
-    padding: $pad;
-    border-radius: 35px;
-}
-@mixin image {
-    @include image-resize-vierkant();
-    border-radius: 50%;
-    margin: 15px 0;
-    @include padd($padding:0px);
-    border: 10px solid black;
-}
-@mixin mediascreen{
-    display: grid;
-    margin: 20px auto;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 25px;
-    $img-width:100px;
-    @include center-align;
-
-    @media  screen and  (min-width:$screen-width-tablet){
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 25px;
-        margin: 20px auto;
-        $img-width:250px;
-        @include center-align;
-    }
-    @media  screen and  (min-width:$screen-width-desktop){
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 25px;
-        margin: 20px auto;
-        $img-width:400px;
-        @include center-align;
-    }
-}
-@mixin social-links{
-    padding: 10px;
-    width: $social-img;
-    height: $social-img;
     
+    @media screen and (min-width:$screen-width-tablet) {
+        grid-template-columns: repeat(2, 1fr);
+        
+    }
+    @media screen and (min-width:$screen-width-desktop) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@mixin social{
+        display: flex;
+        justify-content: right;
+        position: sticky;
+        bottom: 180px;
+        font-size: 25px;
+        z-index: 1;
+        
+        .social-list{
+            list-style-type: none;
+            width: $social-square;
+            height: $social-square;
+            position: relative;
+
+            .social-items{
+                width: $social-square;
+                height: $social-square;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition: width 500ms ease-out;
+                overflow: hidden;
+                // position: absolute;
+                a{
+                    text-decoration: none;
+                    &:hover{
+                        &::after{
+                            content: 'Follow me';
+                            color: white;
+                        }
+                    }
+                }
+                &:hover{
+                    width: 100px;
+                    right: 200px;
+                }
+            }
+        }
 }
