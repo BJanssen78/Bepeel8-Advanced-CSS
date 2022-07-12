@@ -4,6 +4,7 @@ $text-backgr:#fff;
 $footer-backgr:#686de0;
 $footer-text-clr:#fff;
 $content-text-clr:#000;
+$image-border-clr:#000;
 
 // Social links colors
 $social-facebook:#3b5998;
@@ -20,7 +21,13 @@ $cont-font-size:5vw;
 $screen-width-tablet:768px;
 $screen-width-desktop:1024px;
 $social-square:50px;
-$image-square:(width:150px);
+$image-square:150px;
+$border-prop:solid;
+$border-size:10px;
+
+//Testomonial screen settings
+$scr-max-400:400px;
+$scr-min-401:401px;
 
 
 body{
@@ -30,6 +37,4 @@ body{
     margin: 0;
     padding: 0;
 }
-.testomonial{
-    display: none;
-}
+

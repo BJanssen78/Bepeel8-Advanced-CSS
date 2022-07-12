@@ -7,15 +7,76 @@ body {
 }
 
 .testomonial {
-  display: none;
+  width: 80%;
+  margin: 30px auto;
+  font-size: 5vw;
+  background-color: #fff;
+  border-radius: 35px;
+  position: relative;
+  max-height: 590px;
+  gap: 25px;
+}
+@media screen and (min-width: 401px) {
+  .testomonial {
+    max-height: 590px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .testomonial {
+    max-height: 710px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .testomonial {
+    max-height: 850px;
+  }
+}
+.testomonial .inner-container {
+  padding: 15px;
+  position: relative;
+}
+.testomonial .image-container {
+  position: relative;
+}
+.testomonial .image-container::after {
+  content: "";
+  white-space: pre-wrap;
+  display: block;
+  color: white;
+  padding-top: 200px;
+  width: 100%;
+  height: 100px;
+  transform: translateY(-90px);
+  background-color: #686de0;
+  border-radius: 0 0 35px 35px;
+  z-index: -1;
+}
+.testomonial .plaatje {
+  width: 150px;
+  height: 150px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+  border: 10px solid #000;
+  padding: 0;
+  margin: 0;
+}
+.testomonial .footer {
+  color: #fff;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  transform: translateY(-290px);
+}
+.testomonial .footer .testo-link {
+  color: #c3cfe2;
+  text-decoration: none;
 }
 
 .portfolio {
   display: grid;
   width: 80%;
   margin: 20px auto;
-  justify-content: center;
-  justify-items: center;
   grid-template-columns: 1 auto-fit, minmax(300px, 1fr);
   gap: 25px;
 }
@@ -23,24 +84,31 @@ body {
   .portfolio {
     grid-template-columns: repeat(2, 1fr);
   }
+  .portfolio .porto-img {
+    width: 230px;
+  }
 }
 @media screen and (min-width: 1024px) {
   .portfolio {
     grid-template-columns: repeat(3, 1fr);
+  }
+  .portfolio .porto-img {
+    width: 260px;
   }
 }
 .portfolio .foto-btn {
   position: relative;
 }
 .portfolio .foto-btn .porto-img {
-  z-index: 2;
+  position: relative;
+  cursor: pointer;
 }
 .portfolio .foto-btn .porto-img:hover {
   background-color: rgba(0, 0, 0, 0.4);
   opacity: 0.1;
   z-index: -1;
 }
-.portfolio .foto-btn .porto-img:hover > .img-btn {
+.portfolio .foto-btn .porto-img:hover, .portfolio .foto-btn .porto-img:hover .img-btn {
   z-index: 1;
 }
 .portfolio .foto-btn .img-btn {
@@ -51,31 +119,37 @@ body {
   transform: translate(-50%, -50%);
   width: 40%;
   height: 15%;
-  font-size: 0.3em;
+  font-size: 0.5em;
   color: white;
   background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 25px;
   border: none;
   z-index: -1;
 }
 .portfolio .foto-btn .img-btn:hover {
-  z-index: 1;
   background-color: rgba(0, 0, 0, 0.8);
 }
 
 .social-links {
   display: flex;
+  flex-direction: column;
   justify-content: right;
+  align-items: flex-end;
+  align-content: center;
   position: -webkit-sticky;
   position: sticky;
+  width: 100%;
+  height: 175px;
   bottom: 180px;
   font-size: 25px;
   z-index: 1;
 }
 .social-links .social-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
   list-style-type: none;
-  width: 50px;
-  height: 50px;
-  position: relative;
+  width: 50%;
 }
 .social-links .social-list .social-items {
   width: 50px;
@@ -83,19 +157,23 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: width 500ms ease-out;
+  transition: width 300ms ease-out;
   overflow: hidden;
+  position: relative;
+}
+.social-links .social-list .social-items:hover {
+  width: 160px;
 }
 .social-links .social-list .social-items a {
   text-decoration: none;
 }
-.social-links .social-list .social-items a:hover::after {
-  content: "Follow me";
-  color: white;
+.social-links .social-list .social-items a:hover {
+  text-align: left;
+  padding-left: 5px;
 }
-.social-links .social-list .social-items:hover {
-  width: 100px;
-  right: 200px;
+.social-links .social-list .social-items a:hover::after {
+  content: " Follow me";
+  color: white;
 }
 .social-links .social-list {
   padding: 0;

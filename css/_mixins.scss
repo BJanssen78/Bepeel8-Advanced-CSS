@@ -1,3 +1,27 @@
+@mixin testo-img{
+    width: $image-square;
+    height: $image-square;
+    object-fit: cover;
+    border-radius: 50%;
+    border: $border-size $border-prop $image-border-clr;
+    padding: 0;
+    margin: 0;
+    // z-index: 1;
+}
+@mixin testomonial{
+    max-height: 590px;
+
+    @media screen and (min-width:$scr-min-401) {
+        max-height: 590px; 
+    }
+    @media screen and (min-width:$screen-width-tablet) {
+        max-height: 710px; 
+        // padding-bottom: 25px;       
+    }
+    @media screen and (min-width:$screen-width-desktop) {
+        max-height: 850px;
+    }
+}
 
 @mixin portfolio-image{
     grid-template-columns: 1(auto-fit, minmax(300px, 1fr));
@@ -5,48 +29,65 @@
     
     @media screen and (min-width:$screen-width-tablet) {
         grid-template-columns: repeat(2, 1fr);
+        .porto-img{
+            width: 230px;
+        }
         
     }
     @media screen and (min-width:$screen-width-desktop) {
         grid-template-columns: repeat(3, 1fr);
+        .porto-img{
+            width: 260px;
+        }
     }
 }
 
-@mixin social{
+@mixin social{// section
         display: flex;
+        flex-direction: column;
         justify-content: right;
+        align-items: flex-end;
+        align-content: center;
         position: sticky;
+        width: 100%;
+        height: 175px;
         bottom: 180px;
         font-size: 25px;
         z-index: 1;
+        // position: relative;
         
-        .social-list{
+        .social-list{ //ul
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
             list-style-type: none;
-            width: $social-square;
-            height: $social-square;
-            position: relative;
+            width: 50%;
 
-            .social-items{
+            .social-items{// i
                 width: $social-square;
                 height: $social-square;
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                transition: width 500ms ease-out;
+                transition: width 300ms ease-out;
                 overflow: hidden;
-                // position: absolute;
+                position: relative;
+
+                &:hover{
+                    width: 160px;
+                }
+
                 a{
                     text-decoration: none;
                     &:hover{
+                        // width: 200px;
+                        text-align: left;
+                        padding-left: 5px;
                         &::after{
-                            content: 'Follow me';
+                            content: ' Follow me';
                             color: white;
                         }
                     }
-                }
-                &:hover{
-                    width: 100px;
-                    right: 200px;
                 }
             }
         }

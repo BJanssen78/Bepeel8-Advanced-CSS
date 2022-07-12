@@ -1,33 +1,93 @@
 @import "./base";
 @import "./mixins";
 
+.testomonial{
+    width: 80%;
+    margin: 30px auto;
+    font-size: $cont-font-size;
+    background-color: $text-backgr;
+    border-radius: 35px;
+    position: relative;
+    @include testomonial;
+    gap: 25px;
+    
+    .inner-container{
+        padding: 15px;
+        // z-index: 2;
+        position: relative;
 
+    }
+    .image-container{
+        position: relative;
+        // z-index: 1;
+        &::after{
+            content:'';
+            white-space: pre-wrap;
+            display: block;
+            color: white;
+            padding-top: 200px;
+            width: 100%;
+            height: 100px;
+            transform:translateY(-90px);
+            background-color: $footer-backgr;
+            border-radius:0 0 35px 35px;
+            z-index: -1;
+        }
+        
+    }
+    .plaatje{
+        @include testo-img;
+        // position: absolute;
+
+        // z-index: 2;
+        
+    }
+    .footer{
+        // display: none;
+        // background-color: $footer-backgr;
+        // border-radius:0 0 35px 35px;
+        color: $footer-text-clr;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        // height: 20%;
+        // z-index: 1;
+        transform:translateY(-290px);
+        
+        .testo-link{
+            color: $page-backgr;
+            text-decoration: none;
+        }
+    }
+}
 // Hier begint de opmaak van de portfolio.
-.portfolio{
+.portfolio{//section
     display: grid;
     width: 80%;
     margin: 20px auto;
-    justify-content: center;
-    justify-items: center;
+    // justify-content: center;
+    // justify-items: center;
     @include portfolio-image;
     gap:25px;
 
-    .foto-btn{
+    .foto-btn{//div met img en btn
         position: relative;
 
-        .porto-img{
-            z-index: 2;
+        .porto-img{//dit is de img
+            // z-index: 1;
+            position: relative;
+            cursor: pointer;
             &:hover{
                 background-color: rgba(0, 0, 0, 0.4);
                 opacity: 0.1;
                 z-index: -1;
-                &> .img-btn{
-                    z-index: 1;
+                &,.img-btn{
+                    z-index:1 ;
                 }
             }
         }
         
-        .img-btn{
+        .img-btn{// dit is de btn
             position: absolute;
             top: 50%;
             left: 50%;
@@ -35,13 +95,14 @@
             transform:translate(-50%, -50%);
             width: 40%;
             height: 15%;
-            font-size: 0.3em;
+            font-size: 0.5em;
             color: white;
             background-color: rgba(0, 0, 0, 0.4);
+            border-radius: 25px;
             border: none;
             z-index: -1;
             &:hover{
-                z-index: 1;
+                // z-index: 3;
                 background-color: rgba(0, 0, 0, 0.8);
             }
         }

@@ -1,0 +1,84 @@
+
+<!doctype = html>
+<html>
+    <head>
+        <title>Bepeel Development</title>
+        <!-- start Meta section -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <!-- End Meta section -->
+
+        <!-- start site css link section-->
+        
+        <!-- External site css -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap" rel="stylesheet">
+        <!-- end site css link section-->
+
+        <!-- start page css link section-->
+        
+        <!-- end page css link section-->
+
+        <!-- Start script section -->
+        <script src="https://kit.fontawesome.com/6456d808c8.js" crossorigin="anonymous"></script>
+        <!-- Start script section -->
+
+    </head>
+
+    <body>
+        <!-- Start header -->
+        <div id="header">
+            
+        </div>
+        <!-- Einde header -->
+
+        <!-- Start navigatie -->
+        <div id="navigatie">
+            
+        </div>
+        <!-- einde navigatie -->
+
+        <div id="content">
+
+        </div>
+
+        <div id="footer">
+          
+        </div>
+
+    </body>
+</html>
+// css
+.container3 {
+    display: flex;
+    flex-direction: column;
+    font-size: xx-large;
+    align-items: end;
+    i {
+      transition: width 500ms ease-out;
+      text-align: left;
+      overflow: hidden;
+      a {
+        font-size: small;
+        text-decoration: none;
+        color: $color-white;
+      }
+      &:hover {
+        width: 20%;
+      }
+
+//html
+<div class="container3">
+
+    <i class="fa-brands fa-twitter fa-fw " style="background-color: #00aced;">
+      <a href="*"><span>Follow my twitter</span></a>
+    </i>
+
+    <i class="fa-brands fa-linkedin-in fa-fw " style="background-color: #007bb6;"></i>
+
+    <i class="fa-brands fa-facebook-f  fa-fw " style="background-color: #3b5998;"></i>
+
+    <i class="fa-brands fa-github fa-fw " style="background-color: #333;"></i>
+
+
+  </div>
